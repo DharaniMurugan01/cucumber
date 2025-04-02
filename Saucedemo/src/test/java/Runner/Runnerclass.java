@@ -4,8 +4,8 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions( plugin = {
         "pretty",
         "html:target/cucumber-reports/Cucumber.html",
-        "json:target/cucumber-reports/Cucumber.json"
-    },features="src\\test\\resources\\com\\features\\Login.feature",glue="Stepdefinition")
+        "json:target/cucum ber-reports/Cucumber.json"
+    },features="src\\test\\resources\\com\\features\\Log.feature",glue="Stepdefinition")
 public class Runnerclass extends  AbstractTestNGCucumberTests{
 	
 }
