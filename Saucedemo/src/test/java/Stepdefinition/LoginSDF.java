@@ -15,7 +15,7 @@ import io.cucumber.java.en.When;
 public class LoginSDF {
 	WebDriver driver=new ChromeDriver();
 	@Before
-	public void i_am_on_the_swag_labs_login_page() {
+	public void setup() {
 	    driver.get("https://www.saucedemo.com/v1/index.html");
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -74,7 +74,7 @@ public class LoginSDF {
 		   System.out.println("Both are invalid");
 	}
 	@After
-	public void quit_the_application() {
+	public void teardown() {
 	   driver.quit();
 	}
 }
