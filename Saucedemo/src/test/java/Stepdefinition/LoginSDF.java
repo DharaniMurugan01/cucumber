@@ -6,12 +6,15 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 public class LoginSDF {
 	WebDriver driver=new ChromeDriver();
-	@Given("I am on the Swag Labs login page")
+	@Before
 	public void i_am_on_the_swag_labs_login_page() {
 	    driver.get("https://www.saucedemo.com/v1/index.html");
 	    driver.manage().window().maximize();
@@ -70,7 +73,7 @@ public class LoginSDF {
 		   Assert.assertTrue(k.contains(m));
 		   System.out.println("Both are invalid");
 	}
-	@Then("quit the application")
+	@After
 	public void quit_the_application() {
 	   driver.quit();
 	}
