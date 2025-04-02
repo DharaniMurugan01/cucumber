@@ -7,7 +7,7 @@ Feature: Swag Labs Login Functionality
     When I enter "<username>" as username1
     And I enter "<password>" as password1
     And I click on the login button1
-    Then I should <outcome>
+    Then I should "<outcome>"
 
     Examples:
       | username        | password       | outcome                                  |

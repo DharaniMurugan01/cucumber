@@ -43,22 +43,32 @@ public class step {
 		WebElement ele1=driver.findElement(By.xpath("//input[@id='login-button']"));
 		   ele1.click();
 	}
-
-	@Then("I should be redirected to the products pagee")
-	public void i_should_be_redirected_to_the_products_pagee() {
-	}
-
-	@Then("I should see an error messagee")
-	public void i_should_see_an_error_messagee() {
-	}
-
-	@Then("I should see an error message in password fieldd")
-	public void i_should_see_an_error_message_in_password_fieldd() {
-	    
-	}
-
-	@Then("I should see an error message in both fieldsd")
-	public void i_should_see_an_error_message_in_both_fieldsd() {
-	    
+	@Then("I should {string}")
+	public void i_should(String string) {
+		if(string.equals("be redirected to the products pageee")) {
+		    //WebElement tit=driver.findElement(By.xpath("//span[@class='title']"));
+		    String ex="Swag Labs";
+		    String ac=driver.getTitle();
+		    System.out.println(ac);
+		    Assert.assertEquals(ex,ac);
+	    }
+	    else if(string.equals("see an error messageee")) {
+	    	WebElement txt=driver.findElement(By.xpath("//h3[@data-test='error']"));
+			String ex="Username is required";
+			String ac=txt.getText();
+			Assert.assertTrue(ac.contains(ex));
+	    }
+	    else if(string.equals("see an error message in password fielddds")) {
+	    	WebElement txt=driver.findElement(By.xpath("//h3[@data-test='error']"));
+			String ex="Password is required";
+			String ac=txt.getText();
+			Assert.assertTrue(ac.contains(ex));
+	    }
+	    else if(string.equals("see an error message in both fieldsd")) {
+	    	WebElement err=driver.findElement(By.xpath("//h3"));
+		    String ex="Epic sadface: Username and password do not match any user in this service";
+		    String ac=err.getText();
+		    Assert.assertEquals(ex,ac);
+	    }
 	}
 }
