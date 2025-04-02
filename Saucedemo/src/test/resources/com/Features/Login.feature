@@ -1,9 +1,9 @@
 
-@tag
+@Login
 Feature: Swag Labs Login Functionality
   I want to login the swap labs website
 
-  @tag1
+  @Validcredentilas
   Scenario: Valid Login
     Given I am on the Swag Labs login page
     When I enter "standard_user" as username
@@ -11,7 +11,7 @@ Feature: Swag Labs Login Functionality
     And I click on the login button
     Then I should be redirected to the products page
     And quit the application
-  @tag2
+  @Invalid1
   Scenario:Invalid Login
     Given I am on the Swag Labs login page
     When I enter "" as username
@@ -19,7 +19,7 @@ Feature: Swag Labs Login Functionality
     And I click on the login button
     Then I should see an error message
     And quit the application
-  @tag3
+  @Invalid2
   Scenario:Invalid Login username
     Given I am on the Swag Labs login page
     When I enter "standard_user" as username
@@ -27,7 +27,7 @@ Feature: Swag Labs Login Functionality
     And I click on the login button
     Then I should see an error message in password field
     And quit the application
-  @tag4
+  @Invalid3
   Scenario:Invalid Login username
     Given I am on the Swag Labs login page
     When I enter "standard" as username
